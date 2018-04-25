@@ -1,0 +1,30 @@
+<div id="reader"></div>
+<script src="http://static.bcedocument.com/reader/v2/doc_reader_v2.js"></script>
+<script type="text/javascript">
+(function () {
+    var option = {
+        docId: "doc-hf5wyb5r0mbd592",
+        token: "TOKEN",
+        host: "BCEDOC",
+        width: 600,
+        pn: 1,
+        ready: function (handler) {
+            handler.setFontSize(1);
+            handler.setBackgroundColor("#000");
+            handler.setFontColor("#fff");
+        },
+        flip: function (data) {
+            console.log(data.pn);
+        },
+        fontSize: "big",
+        toolbarConf: {
+            page: true,
+            pagenum: true,
+            full: false,
+            copy: true,
+            position: "center"
+        }
+    };
+    new Document("reader", option);
+})();
+</script>

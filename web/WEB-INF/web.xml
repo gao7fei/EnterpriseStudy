@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--<security-constraint>
+        <web-resource-collection>
+            <web-resource-name>JSPs</web-resource-name>
+            <url-pattern>/homepage.jsp</url-pattern>
+            <url-pattern>/comment.jsp</url-pattern>
+            <url-pattern>/CreditMarket.jsp</url-pattern>
+            <url-pattern>/GM.jsp</url-pattern>
+            <url-pattern>/grid_page.jsp</url-pattern>
+            <url-pattern>/login.jsp</url-pattern>
+            <url-pattern>/music.com.jsp</url-pattern>
+            <url-pattern>/ppt.com.jsp</url-pattern>
+            <url-pattern>/ppt.html</url-pattern>
+            <url-pattern>/product-details.jsp</url-pattern>
+            <url-pattern>/search_page.jsp</url-pattern>
+            <url-pattern>/SignUp.jsp</url-pattern>
+            <url-pattern>/video.com.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint/>
+    </security-constraint>-->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+   <!--<listener>
+        <listener-class>com.LoginCheck.tools.OnlineListener</listener-class>
+    </listener>-->
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.LoginCheck.Filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        
+        <url-pattern>/homepage.jsp</url-pattern>
+        <url-pattern>/comment.jsp</url-pattern>
+        <url-pattern>/CreditMarket.jsp</url-pattern>
+        <url-pattern>/GM.jsp</url-pattern>
+        <url-pattern>/grid_page.jsp</url-pattern>
+        <!--<url-pattern>../src/new_ext.dic</url-pattern>-->
+        <url-pattern>/music.com.jsp</url-pattern>
+        <url-pattern>/ppt.com.jsp</url-pattern>
+        <url-pattern>/ppt.html</url-pattern>
+        <url-pattern>/product-details.jsp</url-pattern>
+        <url-pattern>/search_page.jsp</url-pattern>
+        <url-pattern>/video.com.jsp</url-pattern>
+    </filter-mapping>
+    <!--<filter>
+        <filter-name>historyFilter</filter-name>
+        <filter-class>com.LoginCheck.Filter.HistoryFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>historyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
+
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+</web-app>

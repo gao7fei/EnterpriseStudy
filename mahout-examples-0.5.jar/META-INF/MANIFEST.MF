@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: srowen
+Build-Jdk: 1.6.0_24
+Specification-Title: Mahout Examples
+Specification-Version: 0.5
+Specification-Vendor: The Apache Software Foundation
+Implementation-Title: Mahout Examples
+Implementation-Version: 0.5
+Implementation-Vendor-Id: org.apache.mahout
+Implementation-Vendor: The Apache Software Foundation
+

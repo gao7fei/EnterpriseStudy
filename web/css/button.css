@@ -1,0 +1,53 @@
+.button-1{
+    background-color: transparent;
+    border: 2px solid #9bc7de;
+    color: #D2B48C;
+    position: relative;
+    overflow: hidden;
+    margin: 1rem;
+    padding: 0;
+    text-transform: uppercase;
+}
+.button-2{
+    background-color: transparent;
+    border: 2px solid #9bc7de;
+    color: #000000;
+    position: relative;
+    overflow: hidden;
+    margin: 1rem;
+    padding: 0;
+    text-transform: uppercase;
+
+}
+
+.button-3{
+    position: relative;
+    width: 200px;
+    margin: 1rem;
+    background: #9bc7de;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+.button-4{
+    background-color: transparent;
+    border: 2px solid #9bc7de;
+    color: #D2B48C;
+    position: relative;
+    overflow: hidden;
+    margin: 1rem;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.btn-round {
+    border-radius: 10em;
+}
+.btn-size1 {
+    width: 70px;
+    height: 25px;
+}
+.btn-size2{
+    width:150px;
+    height:30px;
+}

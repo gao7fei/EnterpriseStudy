@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+
+    <package name="helloworld" extends="struts-default">
+        <action name="product-save" class="com.saber.action.Comment" method="execute">
+            <result name="success">cooment.jsp</result>
+        </action>
+        <action name="TestasAware" class="com.saber.dao.CommentInfoManager" method="allComment">
+            <result name="success">cooment.jsp</result>
+        </action>
+        <action name="GMAware" class="com.saber.dao.CommentInfoManager" method="someComment">
+            <result name="success">GM.jsp</result>
+        </action>
+        <action name="pageList" class="com.saber.action.CourseListAction" method="queryList">
+            <result name="userList" type="dispatcher">grid_page.jsp</result>
+        </action>
+        <action name="pageSearch" class="com.saber.action.CourseListAction" method="querySearch">
+            <result name="userSearch" type="dispatcher">search_page.jsp</result>
+        </action>
+        <action name="learningTest" class="com.saber.action.CourseAction" method="queryCourse">
+            <result name="video" type="dispatcher">video.com.jsp</result>
+            <result name="ppt" type="dispatcher">ppt.com.jsp</result>
+            <result name="music" type="dispatcher">music.com.jsp</result>
+        </action>
+        <action name="detailsAction" class="com.saber.action.CourseAction"  method="queryDetails">
+            <result name="success">product-details.jsp</result>
+        </action>
+        <action name="homepage" class="com.saber.action.CourseAction" method="queryTuijian">
+            <result name="tuijian" type="dispatcher">homepage.jsp</result>
+        </action>
+    </package>
+
+    <!--LHF 部分action-->
+    <!--廖海峰部分ACTION-->
+
+
+    <package name="default"  extends="struts-default">
+
+        <action name="TradeProduct" class="com.LoginCheck.Service.Trade" method="loadpage">
+        </action>
+
+        <action name="Charts" class="com.LoginCheck.Service.FormAction" method="Json">
+        <result name="input">Form.jsp</result>
+        </action>
+
+        <action name="Log" class="com.LoginCheck.Service.Log">
+            <result name="Admin">./index.jsp</result>
+            <result name="fail">./login.jsp</result>
+            <!--这里的链接会受目录影响，故当把JSP/HTML置于分类目录下时可能还要改-->
+            <result name="User">./homepage.jsp</result>
+        </action>
+        <action name="Login" class="com.LoginCheck.Service.Log" method="login">
+            <result name="success">./SignUp.jsp</result>
+            <result name="error">./login.jsp</result>
+        </action>
+        <action name="Logout" class="com.LoginCheck.Service.Log" method="logout">
+            <result name="login">./login.jsp</result>
+        </action>
+        <action name="logcheck" class="com.LoginCheck.Service.Log" method="logcheck">
+            <result name="unlog">./login.jsp</result>
+            <result name="log">./</result>
+        </action>
+        <action name="SignUp" class="com.LoginCheck.Service.SignUp">
+            <result name="success">./login.jsp</result>
+            <result name="loging">./</result>
+            <result name="error">./</result>
+        </action>
+        <action name="Audio" class="com.LoginCheck.TestExample.Audio">
+            <result name="success">./</result>
+        </action>
+
+        <!--<action name="pageList" class="com.saber.action.UserListAction" method="queryList">
+            <result name="userList" type="dispatcher">./index.jsp</result>
+        </action>-->
+    </package>
+
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.multipart.maxSize" value="157286400" /><!--设定允许文件上传的最大的大小，单位是字节-->
+    <constant name="struts.custom.i18n.resources" value="app"></constant>
+    <package name="upload" extends="struts-default">
+
+        <action name="fileMemger/server/php/" class="com.sf.up.uploadFile" method="execute">
+            <result name="success">/fileMemger/success.jsp</result>
+            <result name="error">/fileMemger/error.jsp</result>
+            <!--当文件过大或者上传的类型不符合时，返回error界面-->
+        </action>
+        <action name="delete" class="com.sf.up.deleteFile">
+            <result name="success">/fileMemger/success.jsp</result>
+            <result name="error">/fileMemger/error.jsp</result>
+        </action>
+        <action name="fileInfo" class="com.sf.filememger.putFileInfo" method="fileInof">
+
+            <result name="success">/fileMemger/success.jsp</result>
+        </action>
+        <action name="courseInfo" class="com.sf.filememger.CourseInfo" method="fileInof">
+            <result name="success">/fileMemger/success.jsp</result>
+        </action>
+        <action name="message" class="com.sf.message.GetMessage" method="getMessage">
+            <result name="success">/fileMemger/success.jsp</result>
+        </action>
+    </package>
+</struts>
